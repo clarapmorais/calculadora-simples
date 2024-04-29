@@ -1,0 +1,135 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  transition: all 0.5s ease;
+}
+body{
+  font-family: sans-serif;
+  background-image: linear-gradient( 135deg, #65FDF0 10%, #1D6FA3 100%);
+}
+body.body-dark{
+  transition: all 200ms ease;
+  background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.container{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.calculator{
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 1.25rem;
+  border-radius: 0.62rem;
+  background-color: #041214;
+}
+.dark{
+  background-color:#ffffff;
+}
+.theme-toggler{
+  position: absolute;
+  top: 1.87rem;
+  right: 1.87rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.theme-toggler.active{
+  color: #333333;
+}
+.theme-toggler.active::before{
+  background-color: #333333;
+}
+.theme-toggler::before{
+  content: '';
+  height: 1.87rem;
+  width: 1.87rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  z-index: -1;
+}
+#display{
+  margin: 0 0.62rem;
+  height: 9.37rem;
+  width: 100%;
+  max-width: 16.875rem;
+  display: flex;
+  border: unset;
+  background: transparent;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  overflow-x: scroll;
+  color: #ffffff;
+}
+#displat::-webkit-scrollbar{
+  display: block;
+  height: 0.18rem;
+}
+.dark #display{
+  color: #000000;
+}
+.alert-format{
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: normal;
+}
+.result{
+  font-weight: bold;
+}
+button{
+  height: 3.75rem;
+  width: 3.75rem;
+  border: 0;
+  border-radius: 1.87rem;
+  margin: 0.31rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+button#history{
+  background-color: #262629;
+  color: #ffffff;
+}
+.dark button#history{
+  background-color: lightgrey;
+  color: #000000;
+}
+button:hover{
+  transform: scale(1.1);
+}
+button#equal{
+  background-color: #00362C;
+  color: #ffffff;
+}
+.dark button#equal{
+  background-color: #ADF6E6;
+  color: #000000;
+}
+button.btn-number{
+  background-color: #093647;
+  color: #ffffff;
+}
+.dark button.btn-number{
+  background-color: #C0E8FE;
+  color: #000000;
+}
+button.btn-operator{
+  background-color: #4B274C;
+  color: #ffffff;
+}
+.dark button.btn-operator{
+  background-color: #FDCFFC;
+  color: #000000;
+}

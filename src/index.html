@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/no-script.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <meta name="keywords" content="Calculadora; Soma; Subtração; Adição; Cálculos">
+  <meta name="author" content="Gabriel Ribeiro">
+  <meta property="og:title" content="Caluladora">
+  <meta property="og:description" content="Calculadora em JS">
+  <meta property="og:url" content="https://gabrieszin.github.io/calculator/">
+  <meta property="og:image" content="https://gabrieszin.github.io/calculator/assets/img/banner-externo.png">
+  <meta property="og:image:secure_url" content="https://gabrieszin.github.io/calculator/assets/img/banner-externo.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="400"> 
+  <meta property="og:image:height" content="300"> 
+
+  <meta http-equiv="Content-Security-Policy" 
+  content="default-src 'self' 'unsafe-inline'; 
+  style-src 'self' 'unsafe-inline'; 
+  style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' 'unsafe-inline'; 
+  font-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://cdn.jsdelivr.net/ https://cdnjs.cloudflare.com/ajax/; 
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net/ https://code.jquery.com/ https://cdnjs.cloudflare.com/ http://cdn.jsdelivr.net/npm/sweetalert2@11; 
+  frame-src 'self' 'unsafe-inline';
+  connect-src 'self' 'unsafe-inline';">   
+
+</head>
+<body>
+  <div class="container">
+    <div class="calculator dark">
+      <button id="history" class="dark"><i class="fa-solid fa-clock-rotate-left"></i></button>
+      <div class="theme-toggler active">
+        <i class="toggler-icon"></i>
+      </div>
+      <div class="display-screen">
+        <input type="text" id="display" autofocus>
+        <!-- <div id="display"></div> -->
+      </div>
+      <div class="buttons">
+        <table>
+          <tr>
+            <td><button class="btn-operator" id="clear" onclick="calc(this.id)">C</button></td>
+            <td><button class="btn-operator" id="/" onclick="calc(this.id)">&divide;</button></td>
+            <td><button class="btn-operator" id="*" onclick="calc(this.id)">&times;</button></td>
+            <td><button class="btn-operator" id="backspace" onclick="calc(this.id)"><</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn-number" id="7" onclick="calc(this.id)">7</button></td>
+            <td><button class="btn-number" id="8" onclick="calc(this.id)">8</button></td>
+            <td><button class="btn-number" id="9" onclick="calc(this.id)">9</button></td>
+            <td><button class="btn-operator" id="-" onclick="calc(this.id)">-</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn-number" id="4" onclick="calc(this.id)">4</button></td>
+            <td><button class="btn-number" id="5" onclick="calc(this.id)">5</button></td>
+            <td><button class="btn-number" id="6" onclick="calc(this.id)">6</button></td>
+            <td><button class="btn-operator" id="+" onclick="calc(this.id)">+</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn-number" id="1" onclick="calc(this.id)">1</button></td>
+            <td><button class="btn-number" id="2" onclick="calc(this.id)">2</button></td>
+            <td><button class="btn-number" id="3" onclick="calc(this.id)">3</button></td>
+            <td><button class="btn-operator" id="." onclick="calc(this.id)">,</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn-operator" id="(" onclick="calc(this.id)">(</button></td>
+            <td><button class="btn-number" id="0" onclick="calc(this.id)">0</button></td>
+            <td><button class="btn-operator" id=")" onclick="calc(this.id)">)</button></td>
+            <td><button class="etn-equal" id="equal" onclick="calc(this.id)">=</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="box-no-script">         
+      <div class="texto-pagina-centralizado-alt">
+        <h2 class="titulo-texto-pagina-centralizado">
+          Este site não funciona com o 
+          <span class="destaque-pagina-centralizado">Javascript desabilitado</span>
+        </h2>
+        <br>
+        <p class="label-texto-pagina-centralizado">Muitos dos recursos usados funcionam através do Javascript e sem ele a navegabilidade e o próprio funcionamento do site são comprometidos</p>
+        <p class="label-texto-pagina-centralizado">Portanto, habilite o Javascript e navegue pelo site</p><br>
+        <button data-recarrega-pagina class="btn-principal-no-script" id="btn-redirecionar-inicio" name="btn-redirecionar-inicio">Recarregar</button>
+      </div>
+    </div>
+  </noscript>
+
+  <script src="./assets/js/script.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
